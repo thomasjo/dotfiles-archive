@@ -22,15 +22,11 @@ def main():
 
 def create_symlinks(force=False):
   for root, dirs, files in os.walk("_/"):
-    if root == "_":
-      prune_dirs(dirs)
-
     target_root = os.path.expanduser(re.sub(r"_/", "~/", root))
     if not os.path.isdir(target_root):
       print("Creating empty directory {0}".format(target_root))
       os.mkdir(target_root)
 
-    # print(target_root)
     for f in files:
       source = os.path.join(root, f)
       target = os.path.join(target_root, f)
@@ -43,11 +39,6 @@ def create_symlinks(force=False):
 
       print("Creating symlink {0} -> {1}".format(source, target))
       os.symlink(source, target)
-
-def prune_dirs(dirs):
-  naughty_dirs = [".git"]
-  for i, d in [(i, d) for (i, d) in enumerate(dirs) if d in naughty_dirs]:
-    del dirs[i]
 
 if __name__ == "__main__":
   main()
