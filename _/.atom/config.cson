@@ -1,0 +1,29 @@
+'exception-reporting':
+  'userId': '2872fc71-4918-191c-bb64-fc832f83e99a'
+'release-notes':
+  'viewedVersion': '0.95.0'
+'welcome':
+  'showOnStartup': false
+'metrics':
+  'userId': 'c50b33a092875ed8d404633495745afc34b85286'
+'editor':
+  'fontFamily': 'Menlo'
+  'fontSize': 13
+  'showIndentGuide': true
+  'lineHeight': 1.6
+'core':
+  'projectHome': '/Users/thomasjo/Projects'
+  'disabledPackages': [
+    'background-tips'
+    'feedback'
+    'metrics'
+  ]
+'spell-check': {}
+'tree-view':
+  'hideIgnoredNames': true
+'latex':
+  'outputDirectory': 'output'
+  'enableShellEscape': true
+'autocomplete':
+  'includeCompletionsFromAllBuffers': true
+'markdown-preview': {}
