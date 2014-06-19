@@ -21,6 +21,7 @@ def main():
     create_symlinks(arguments["--force"])
 
 def create_symlinks(force=False):
+    cwd = os.getcwd()
     for root, dirs, files in os.walk("_/"):
         target_root = os.path.expanduser(re.sub(r"_/", "~/", root))
         if not os.path.isdir(target_root):
@@ -28,7 +29,7 @@ def create_symlinks(force=False):
             os.mkdir(target_root)
 
         for f in files:
-            source = os.path.join(root, f)
+            source = os.path.join(cwd, root, f)
             target = os.path.join(target_root, f)
             if os.path.islink(target) and force:
                 print("Removing existing symlink {0}".format(target))
