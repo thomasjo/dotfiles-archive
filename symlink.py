@@ -31,11 +31,15 @@ def create_symlinks(force=False):
         for f in files:
             source = os.path.join(cwd, root, f)
             target = os.path.join(target_root, f)
-            if os.path.islink(target) and force:
-                print("Removing existing symlink {0}".format(target))
-                os.remove(target)
-            else:
-                print("Skipping {0}".format(source))
+            if os.path.islink(target):
+                if force:
+                    print("Removing existing symlink {0}".format(target))
+                    os.remove(target)
+                else:
+                    print("Skipping existing symlink {0}".format(target))
+                    continue
+            elif os.path.exists(target):
+                print("Skipping conflicting target {0}".format(target))
                 continue
 
             print("Creating symlink {0} -> {1}".format(source, target))
