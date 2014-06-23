@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-"""Creates symlinks for everything in the _ directory, into ~/.
+"""
+Creates symlinks for everything in the _ directory, into ~/.
 
 Usage:
   symlink.py [--force]
@@ -16,21 +17,32 @@ import os
 import re
 from docopt import docopt
 
+
 def main():
+    """
+    The main function, duh!
+    """
     arguments = docopt(__doc__)
     create_symlinks(arguments["--force"])
 
+
 def create_symlinks(force=False):
+    """
+    Walks through the entire '_/' directory, and creates symlinks.
+
+    All pre-existing targets are skipped. Re-creation of symlinks can be
+    forced, but all other conflicts are always skipped.
+    """
     cwd = os.getcwd()
-    for root, dirs, files in os.walk("_/"):
+    for root, _, files in os.walk("_/"):
         target_root = os.path.expanduser(re.sub(r"_/", "~/", root))
         if not os.path.isdir(target_root):
             print("Creating empty directory {0}".format(target_root))
             os.mkdir(target_root)
 
-        for f in files:
-            source = os.path.join(cwd, root, f)
-            target = os.path.join(target_root, f)
+        for file in files:
+            source = os.path.join(cwd, root, file)
+            target = os.path.join(target_root, file)
             if os.path.islink(target):
                 if force:
                     print("Removing existing symlink {0}".format(target))
