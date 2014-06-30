@@ -44,6 +44,7 @@ export GIT_SSL_CAINFO="/Users/thomasjo/.ssh/ca-bundle.crt"
 #
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which hub > /dev/null; then eval "$(hub alias -s)"; fi
 
 ##
 # Handy stuff
