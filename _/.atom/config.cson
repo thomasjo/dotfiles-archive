@@ -1,7 +1,5 @@
 'exception-reporting':
   'userId': '2872fc71-4918-191c-bb64-fc832f83e99a'
-'release-notes':
-  'viewedVersion': '0.95.0'
 'welcome':
   'showOnStartup': false
 'metrics':
@@ -27,3 +25,11 @@
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
 'markdown-preview': {}
+'overrides':
+  'scopes':
+    'source':
+      'python':
+        'tabLength': 4
+      'git-config':
+        'tabLength': 8
+        'softTabs': false
