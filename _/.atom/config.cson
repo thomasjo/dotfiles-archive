@@ -1,35 +1,42 @@
-'exception-reporting':
-  'userId': '2872fc71-4918-191c-bb64-fc832f83e99a'
-'welcome':
-  'showOnStartup': false
-'metrics':
-  'userId': 'c50b33a092875ed8d404633495745afc34b85286'
-'editor':
-  'fontFamily': 'Menlo'
-  'fontSize': 13
-  'showIndentGuide': true
-  'lineHeight': 1.6
 'core':
-  'projectHome': '/Users/thomasjo/Projects'
   'disabledPackages': [
     'background-tips'
     'feedback'
     'metrics'
+    'package-generator'
+    'welcome'
   ]
-'spell-check': {}
-'tree-view':
-  'hideIgnoredNames': true
-'latex':
-  'outputDirectory': 'output'
-  'enableShellEscape': true
+  'projectHome': '/Users/thomasjo/Projects'
+  'themes': [
+    'neutron-ui'
+    'electron-dark-syntax'
+  ]
+  'useReactEditor': true
+'editor':
+  'fontFamily': 'Menlo'
+  'fontSize': 13
+  'lineHeight': 1.6
+  'showIndentGuide': true
+  'showInvisibles': true
 'autocomplete':
   'includeCompletionsFromAllBuffers': true
-'markdown-preview': {}
+'exception-reporting':
+  'userId': '2872fc71-4918-191c-bb64-fc832f83e99a'
+'metrics':
+  'userId': 'c50b33a092875ed8d404633495745afc34b85286'
+'tree-view':
+  'hideIgnoredNames': true
+'welcome':
+  'showOnStartup': false
+'latex':
+  'enableShellEscape': true
+  'outputDirectory': 'output'
 'overrides':
   'scopes':
     'source':
-      'python':
-        'tabLength': 4
       'git-config':
-        'tabLength': 8
         'softTabs': false
+        'tabLength': 8
+      'python':
+        'showIndentGuide': false
+        'tabLength': 4
