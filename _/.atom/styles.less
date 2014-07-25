@@ -1,29 +1,21 @@
+@import "syntax-variables";
+
 /* ----------
  *  thomasjo
  * ---------- */
 
-.tree-view {
-  font-size: 11px;
-}
-
 .editor {
   .indent-guide {
-    box-shadow: inset 1px 0 rgba(197, 200, 198, 0.05);
-  }
-
-  .cursor {
-    border-left-width: 2px;
+    box-shadow: inset 1px 0 fade(@syntax-indent-guide-color, 33%);
   }
 
   .invisible-character {
-    color: rgba(197, 200, 198, 0.07);
+    color: fade(@syntax-indent-guide-color, 70%);
   }
 
   .gutter {
-    min-width: 5em;
-    background-color: transparent;
-
     .line-number {
+      min-width: 4.5em;
       opacity: 0.2;
     }
   }
