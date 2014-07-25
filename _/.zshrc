@@ -26,11 +26,13 @@ export EDITOR="atom"
 export GIT_EDITOR="atom --wait"
 
 export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/Users/thomasjo/.bin:$PATH"
-export PATH="/Users/thomasjo/.cabal/bin:$PATH"
+export PATH="$PATH:/usr/local/share/npm/bin"
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$PATH:/Users/thomasjo/.cabal/bin"
 
 export NODE_PATH="/usr/local/lib/node_modules"
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # CA certs required by cURL and GIT (http://curl.haxx.se/docs/sslcerts.html)
 export CURL_CA_BUNDLE="/Users/thomasjo/.ssh/cacert.pem"
@@ -45,6 +47,7 @@ export GIT_SSL_CAINFO="/Users/thomasjo/.ssh/ca-bundle.crt"
 # if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
+
 
 ##
 # Handy stuff
