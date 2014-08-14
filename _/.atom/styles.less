@@ -1,22 +1,43 @@
 @import "syntax-variables";
+@import "ui-variables";
 
 /* ----------
  *  thomasjo
  * ---------- */
 
-.editor {
+.editor:not(.mini) {
+  span {
+    text-decoration: initial !important;
+  }
+
   .indent-guide {
-    box-shadow: inset 1px 0 fade(@syntax-indent-guide-color, 33%);
+    box-shadow: inset 1px 0 fade(@syntax-indent-guide-color, 7%);
+
+    &:first-child {
+      box-shadow: none;
+    }
   }
 
   .invisible-character {
-    color: fade(@syntax-indent-guide-color, 70%);
+    color: fade(@syntax-indent-guide-color, 7%);
   }
 
   .gutter {
+    background-color: lighten(@app-background-color, 2%);
+    color: darken(@text-color, 20%);
+
     .line-number {
+      &.cursor-line {
+        background-color: lighten(@app-background-color, 10%);
+      }
+
       min-width: 4.5em;
-      opacity: 0.2;
+      opacity: 0.75;
     }
   }
+}
+
+.editor-colors {
+  background-color: lighten(@app-background-color, 4%);
+  color: lighten(@text-color, 42%);
 }

@@ -9,13 +9,14 @@
   'projectHome': '/Users/thomasjo/Projects'
   'themes': [
     'neutron-ui'
-    'electron-dark-syntax'
+    'atom-dark-syntax'
   ]
   'useReactEditor': true
 'editor':
   'fontFamily': 'Menlo'
   'fontSize': 13
   'lineHeight': 1.6
+  'normalizeIndentOnPaste': false
   'showIndentGuide': true
   'showInvisibles': true
 'autocomplete':
