@@ -1,6 +1,0 @@
-'source.python':
-  'tabLength': 4
-
-'source.git-config':
-  'tabLength': 8
-  'softTabs': false
