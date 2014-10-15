@@ -7,7 +7,7 @@ CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 skip_global_compinit=1
-plugins=(gitfast colored-man brew rbenv pyenv tmux)
+plugins=(gitfast colored-man brew rbenv pyenv)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
