@@ -6,8 +6,12 @@
  * ---------- */
 
 .editor:not(.mini) {
+  background-color: lighten(@app-background-color, 4%);
+  color: lighten(@text-color, 42%);
+
   span {
     text-decoration: initial !important;
+    font-style: normal !important;
   }
 
   .indent-guide {
@@ -35,9 +39,14 @@
       opacity: 0.75;
     }
   }
+
+  &.is-focused {
+    .line.cursor-line {
+      background-color: lighten(@app-background-color, 10%);
+    }
+  }
 }
 
-.editor-colors {
-  background-color: lighten(@app-background-color, 4%);
-  color: lighten(@text-color, 42%);
+.wrap-guide {
+  background-color: lighten(@app-background-color, 10%);
 }

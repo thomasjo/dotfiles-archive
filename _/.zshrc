@@ -38,6 +38,9 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 export CURL_CA_BUNDLE="/Users/thomasjo/.ssh/cacert.pem"
 export GIT_SSL_CAINFO="/Users/thomasjo/.ssh/ca-bundle.crt"
 
+export ATOM_DEV_RESOURCE_PATH="/Users/thomasjo/Projects/atom"
+export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
+
 
 ##
 # Bootstrappers

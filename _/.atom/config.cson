@@ -8,20 +8,20 @@
       'welcome'
     ]
     'projectHome': '/Users/thomasjo/Projects'
+    'useReactEditor': true
     'themes': [
       'neutron-ui'
-      'atom-dark-syntax'
+      'dracula-theme'
     ]
-    'useReactEditor': true
-    'destroyEmptyPanes': false
   'editor':
     'fontFamily': 'Menlo'
     'lineHeight': 1.6
     'normalizeIndentOnPaste': false
-    'showIndentGuide': true
     'showInvisibles': true
     'scrollPastEnd': true
     'softWrapAtPreferredLineLength': true
+    'showIndentGuide': true
+    'fontSize': 13
     'invisibles': {}
   'autocomplete':
     'includeCompletionsFromAllBuffers': true
@@ -37,24 +37,13 @@
   'latex':
     'enableShellEscape': true
     'outputDirectory': 'output'
-  'overrides':
-    'scopes':
-      'source':
-        'git-config':
-          'softTabs': false
-          'tabLength': 8
-        'python':
-          'showIndentGuide': false
-          'tabLength': 4
-      'text':
-        'tex':
-          'tabLength': 4
-
-'.source.git-config':
-  'softTabs': false
-  'tabLength': 8
-'.source.python':
-  'showIndentGuide': false
-  'tabLength': 4
-'.text.tex':
-  'tabLength': 4
+'.tex.text':
+  'editor':
+    'tabLength': 4
+'.git-config.source':
+  'editor':
+    'softTabs': false
+    'tabLength': 8
+'.python.source':
+  'editor':
+    'showIndentGuide': false
