@@ -1,52 +1,9 @@
-@import "syntax-variables";
-@import "ui-variables";
-
-/* ----------
- *  thomasjo
- * ---------- */
-
-.editor:not(.mini) {
-  background-color: lighten(@app-background-color, 4%);
-  color: lighten(@text-color, 42%);
-
-  span {
-    text-decoration: initial !important;
+atom-text-editor::shadow .line {
+  &, & * {
     font-style: normal !important;
-  }
-
-  .indent-guide {
-    box-shadow: inset 1px 0 fade(@syntax-indent-guide-color, 7%);
-
-    &:first-child {
-      box-shadow: none;
-    }
-  }
-
-  .invisible-character {
-    color: fade(@syntax-indent-guide-color, 7%);
-  }
-
-  .gutter {
-    background-color: lighten(@app-background-color, 2%);
-    color: darken(@text-color, 20%);
-
-    .line-number {
-      &.cursor-line {
-        background-color: lighten(@app-background-color, 10%);
-      }
-
-      min-width: 4.5em;
-      opacity: 0.75;
-    }
-  }
-
-  &.is-focused {
-    .line.cursor-line {
-      background-color: lighten(@app-background-color, 10%);
-    }
   }
 }
 
-.wrap-guide {
-  background-color: lighten(@app-background-color, 10%);
+.theme-one-dark-ui {
+  font-size: 11px;
 }

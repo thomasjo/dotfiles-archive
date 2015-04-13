@@ -1,49 +1,63 @@
-'global':
-  'core':
-    'disabledPackages': [
-      'background-tips'
-      'feedback'
-      'metrics'
-      'package-generator'
-      'welcome'
+"*":
+  core:
+    disabledPackages: [
+      "background-tips"
+      "feedback"
+      "metrics"
+      "package-generator"
+      "welcome"
     ]
-    'projectHome': '/Users/thomasjo/Projects'
-    'useReactEditor': true
-    'themes': [
-      'neutron-ui'
-      'dracula-theme'
-    ]
-  'editor':
-    'fontFamily': 'Menlo'
-    'lineHeight': 1.6
-    'normalizeIndentOnPaste': false
-    'showInvisibles': true
-    'scrollPastEnd': true
-    'softWrapAtPreferredLineLength': true
-    'showIndentGuide': true
-    'fontSize': 13
-    'invisibles': {}
-  'autocomplete':
-    'includeCompletionsFromAllBuffers': true
-  'exception-reporting':
-    'userId': '2872fc71-4918-191c-bb64-fc832f83e99a'
-  'metrics':
-    'userId': 'c50b33a092875ed8d404633495745afc34b85286'
-  'tree-view':
-    'hideIgnoredNames': true
-    'hideVcsIgnoredFiles': true
-  'welcome':
-    'showOnStartup': false
-  'latex':
-    'enableShellEscape': true
-    'outputDirectory': 'output'
-'.tex.text':
-  'editor':
-    'tabLength': 4
-'.git-config.source':
-  'editor':
-    'softTabs': false
-    'tabLength': 8
-'.python.source':
-  'editor':
-    'showIndentGuide': false
+    projectHome: "/Users/thomasjo/Code"
+  editor:
+    fontFamily: "Menlo"
+    lineHeight: 1.6
+    showInvisibles: true
+    showIndentGuide: true
+    softWrapAtPreferredLineLength: true
+    scrollPastEnd: true
+    useShadowDOM: true
+    softWrapHangingIndent: 2
+    invisibles: {}
+    fontSize: 11
+  autocomplete:
+    includeCompletionsFromAllBuffers: true
+  "exception-reporting":
+    userId: "2872fc71-4918-191c-bb64-fc832f83e99a"
+  metrics:
+    userId: "c50b33a092875ed8d404633495745afc34b85286"
+  "tree-view":
+    hideVcsIgnoredFiles: true
+    hideIgnoredNames: true
+  welcome:
+    showOnStartup: false
+  latex:
+    outputDirectory: "output"
+    enableShellEscape: true
+    useNotificationsLogger: true
+  "fuzzy-finder": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "isotope-ui":
+    fontWeight: "Regular"
+    fontFamily: "System Default"
+".cpp.source":
+  editor:
+    tabLength: 2
+".coffee.source":
+  editor:
+    preferredLineLength: 100
+".python.source":
+  editor:
+    showIndentGuide: false
+".git-config.source":
+  editor:
+    softTabs: false
+    tabLength: 8
+".tex.text":
+  editor:
+    softWrap: true
+    softWrapHangingIndent: 4
+    tabLength: 4
+".c.source":
+  editor:
+    tabLength: 2
