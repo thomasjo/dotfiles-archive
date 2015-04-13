@@ -7,15 +7,9 @@ CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
 skip_global_compinit=1
-plugins=(gitfast colored-man brew rbenv pyenv)
+plugins=(gitfast colored-man brew)
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
-
-
-##
-# Aliases
-# -------
-alias burp="brew update && brew upgrade && brew cleanup"
 
 
 ##
@@ -24,30 +18,36 @@ alias burp="brew update && brew upgrade && brew cleanup"
 export LANG="en_US.UTF-8"
 export EDITOR="atom"
 export GIT_EDITOR="atom --wait"
+export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
 
 export PATH="/usr/local/bin:$PATH"
 export PATH="/Users/thomasjo/.bin:$PATH"
+export PATH="/Users/thomasjo/.rbenv/bin:$PATH"
+export PATH="/Users/thomasjo/.pyenv/bin:$PATH"
+export PATH="$PATH:/Developer/NVIDIA/CUDA-7.0/bin"
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export PATH="$PATH:/Users/thomasjo/.cabal/bin"
 
+export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-7.0/lib:$DYLD_LIBRARY_PATH"
+
 export NODE_PATH="/usr/local/lib/node_modules"
 export ANDROID_HOME=/usr/local/opt/android-sdk
+export ATOM_DEV_RESOURCE_PATH="/Users/thomasjo/Code/atom"
 
-# CA certs required by cURL and GIT (http://curl.haxx.se/docs/sslcerts.html)
-export CURL_CA_BUNDLE="/Users/thomasjo/.ssh/cacert.pem"
-export GIT_SSL_CAINFO="/Users/thomasjo/.ssh/ca-bundle.crt"
 
-export ATOM_DEV_RESOURCE_PATH="/Users/thomasjo/Projects/atom"
-export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
+##
+# Aliases
+# -------
+alias burp="brew update && brew upgrade && brew cleanup"
+alias git="hub"
 
 
 ##
 # Bootstrappers
 # -------------
-# Not needed as long as we use the corresponding oh-my-zsh plugins
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-# if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
 
 
