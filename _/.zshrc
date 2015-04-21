@@ -16,8 +16,8 @@ unsetopt correct_all
 # Exports
 # -------
 export LANG="en_US.UTF-8"
-export EDITOR="atom"
-export GIT_EDITOR="atom --wait"
+export EDITOR="atom --one"
+export GIT_EDITOR="atom --wait --one"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
 
 export PATH="/usr/local/bin:$PATH"
@@ -41,6 +41,11 @@ export ATOM_DEV_RESOURCE_PATH="/Users/thomasjo/Code/atom"
 # -------
 alias burp="brew update && brew upgrade && brew cleanup"
 alias git="hub"
+alias atom="atom --one"
+
+# Resolves .config folder nonsense...
+#  ~ https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
+alias brew="env PATH=${PATH/$(pyenv root)\/shims:/} brew"
 
 
 ##

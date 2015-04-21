@@ -1,0 +1,4 @@
+'.text.tex.latex':
+  '\\\lol{}':
+    'prefix': 'em'
+    'body': '\\\\empdh{$1} $2'

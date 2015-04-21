@@ -17,16 +17,10 @@
     scrollPastEnd: true
     useShadowDOM: true
     softWrapHangingIndent: 2
-    invisibles: {}
     fontSize: 11
   autocomplete:
     includeCompletionsFromAllBuffers: true
-  "exception-reporting":
-    userId: "2872fc71-4918-191c-bb64-fc832f83e99a"
-  metrics:
-    userId: "c50b33a092875ed8d404633495745afc34b85286"
   "tree-view":
-    hideVcsIgnoredFiles: true
     hideIgnoredNames: true
   welcome:
     showOnStartup: false
@@ -37,27 +31,26 @@
   "fuzzy-finder": {}
   "markdown-preview":
     useGitHubStyle: true
-  "isotope-ui":
-    fontWeight: "Regular"
-    fontFamily: "System Default"
-".cpp.source":
+  "exception-reporting":
+    userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
+".c.source":
   editor:
     tabLength: 2
-".coffee.source":
-  editor:
-    preferredLineLength: 100
-".python.source":
-  editor:
-    showIndentGuide: false
-".git-config.source":
-  editor:
-    softTabs: false
-    tabLength: 8
 ".tex.text":
   editor:
     softWrap: true
     softWrapHangingIndent: 4
     tabLength: 4
-".c.source":
+".git-config.source":
+  editor:
+    softTabs: false
+    tabLength: 8
+".python.source":
+  editor:
+    showIndentGuide: false
+".coffee.source":
+  editor:
+    preferredLineLength: 100
+".cpp.source":
   editor:
     tabLength: 2
