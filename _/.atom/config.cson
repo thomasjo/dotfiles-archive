@@ -4,10 +4,13 @@
       "background-tips"
       "feedback"
       "metrics"
-      "package-generator"
       "welcome"
     ]
     projectHome: "/Users/thomasjo/Code"
+    themes: [
+      "one-light-ui"
+      "solarized-light-syntax"
+    ]
   editor:
     fontFamily: "Menlo"
     lineHeight: 1.6
@@ -18,6 +21,7 @@
     useShadowDOM: true
     softWrapHangingIndent: 2
     fontSize: 11
+    invisibles: {}
   autocomplete:
     includeCompletionsFromAllBuffers: true
   "tree-view":
@@ -25,14 +29,20 @@
   welcome:
     showOnStartup: false
   latex:
-    outputDirectory: "output"
+    outputDirectory: ".output"
     enableShellEscape: true
     useNotificationsLogger: true
+    alwaysOpenResultInAtom: false
   "fuzzy-finder": {}
   "markdown-preview":
     useGitHubStyle: true
   "exception-reporting":
     userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
+  "autocomplete-plus": {}
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "one-light-ui":
+    layoutMode: "Compact"
 ".c.source":
   editor:
     tabLength: 2
@@ -40,7 +50,7 @@
   editor:
     softWrap: true
     softWrapHangingIndent: 4
-    tabLength: 4
+    tabLength: 2
 ".git-config.source":
   editor:
     softTabs: false

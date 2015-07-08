@@ -1,9 +1,12 @@
-atom-text-editor::shadow .line {
-  &, & * {
-    font-style: normal !important;
+atom-text-editor::shadow {
+  .line {
+    &, & * {
+      font-style: normal !important;
+    }
   }
-}
 
-.theme-one-dark-ui {
-  font-size: 11px;
+  .wrap-guide, .indent-guide {
+    opacity: 0.5;
+  }
+
 }
