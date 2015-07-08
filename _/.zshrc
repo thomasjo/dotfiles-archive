@@ -55,6 +55,8 @@ alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
 alias J="jump"
 alias M="mark"
 
+if which safe-rm > /dev/null; then alias rm="safe-rm"; fi
+
 ##
 # Bootstrappers
 # -------------
