@@ -43,24 +43,24 @@
     layoutMode: "Compact"
   "one-light-ui":
     layoutMode: "Compact"
-".c.source":
+".cpp.source":
   editor:
     tabLength: 2
+".coffee.source":
+  editor:
+    preferredLineLength: 100
+".python.source":
+  editor:
+    showIndentGuide: false
+".git-config.source":
+  editor:
+    softTabs: false
+    tabLength: 8
 ".tex.text":
   editor:
     softWrap: true
     softWrapHangingIndent: 4
     tabLength: 2
-".git-config.source":
-  editor:
-    softTabs: false
-    tabLength: 8
-".python.source":
-  editor:
-    showIndentGuide: false
-".coffee.source":
-  editor:
-    preferredLineLength: 100
-".cpp.source":
+".c.source":
   editor:
     tabLength: 2
