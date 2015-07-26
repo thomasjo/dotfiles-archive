@@ -8,11 +8,11 @@
     ]
     projectHome: "/Users/thomasjo/Code"
     themes: [
-      "one-light-ui"
-      "solarized-light-syntax"
+      "one-dark-ui"
+      "one-dark-syntax"
     ]
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "Fira Mono, Menlo"
     lineHeight: 1.6
     showInvisibles: true
     showIndentGuide: true
@@ -20,8 +20,7 @@
     scrollPastEnd: true
     useShadowDOM: true
     softWrapHangingIndent: 2
-    fontSize: 11
-    invisibles: {}
+    fontSize: 13
   autocomplete:
     includeCompletionsFromAllBuffers: true
   "tree-view":
@@ -33,34 +32,34 @@
     enableShellEscape: true
     useNotificationsLogger: true
     alwaysOpenResultInAtom: false
-  "fuzzy-finder": {}
   "markdown-preview":
     useGitHubStyle: true
   "exception-reporting":
     userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
-  "autocomplete-plus": {}
   "one-dark-ui":
-    layoutMode: "Compact"
+    layoutMode: "Spacious"
+    fontSize: 11
   "one-light-ui":
-    layoutMode: "Compact"
-".cpp.source":
+    layoutMode: "Spacious"
+    fontSize: 11
+".c.source":
   editor:
     tabLength: 2
-".coffee.source":
-  editor:
-    preferredLineLength: 100
-".python.source":
-  editor:
-    showIndentGuide: false
-".git-config.source":
-  editor:
-    softTabs: false
-    tabLength: 8
 ".tex.text":
   editor:
     softWrap: true
     softWrapHangingIndent: 4
     tabLength: 2
-".c.source":
+".git-config.source":
+  editor:
+    softTabs: false
+    tabLength: 8
+".python.source":
+  editor:
+    showIndentGuide: false
+".coffee.source":
+  editor:
+    preferredLineLength: 100
+".cpp.source":
   editor:
     tabLength: 2

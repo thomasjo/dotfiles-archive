@@ -1,3 +1,6 @@
+@import "ui-variables";
+@import "syntax-variables";
+
 atom-text-editor::shadow {
   .line {
     &, & * {
@@ -9,4 +12,7 @@ atom-text-editor::shadow {
     opacity: 0.5;
   }
 
+  .scroll-view {
+    z-index: inherit;
+  }
 }
