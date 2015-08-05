@@ -46,8 +46,10 @@ fi
 ATOM_DEV_RESOURCE_PATH="$HOME/Code/atom/atom"
 if [ -d $ATOM_DEV_RESOURCE_PATH ]; then export ATOM_DEV_RESOURCE_PATH; fi
 
-ATOM_PATH="$HOME/Applications"
-if [ -e $ATOM_PATH ]; then export ATOM_PATH; fi
+# Android SDK
+ANDROID_HOME="/usr/local/opt/android-sdk"
+if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
+
 
 ##
 # Aliases
@@ -71,6 +73,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
 if [ -d "$HOME/.nvm" ]; then source "$HOME/.nvm/nvm.sh"; fi
+
 
 ##
 # Handy stuff
