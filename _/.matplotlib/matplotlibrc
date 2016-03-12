@@ -1,10 +1,18 @@
-backend: MacOSX
+backend: tkagg
 
-text.usetex : True
-
+text.usetex : true
 font.family : serif
-font.size : 12.0
+font.size   : 11.0
 
-legend.loc : best
-legend.fontsize : 12.0
+image.cmap : viridis
+
+markers.fillstyle : none
+
+legend.loc       : best
+legend.fontsize  : 11.0
 legend.numpoints : 1
+
+figure.figsize : 7, 5
+savefig.dpi    : 300
+savefig.format : eps
+savefig.bbox   : tight

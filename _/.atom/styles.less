@@ -1,18 +1,39 @@
 @import "ui-variables";
 @import "syntax-variables";
 
+atom-text-editor {
+  &, &::shadow {
+    // font-size: 11px;
+  }
+}
+
 atom-text-editor::shadow {
   .line {
     &, & * {
-      font-style: normal !important;
+      font-style: normal !important; // Italic text is evil.
+      font-weight: normal !important; // Bold text is kinda evil...
     }
   }
 
-  .wrap-guide, .indent-guide {
-    opacity: 0.5;
+  .cursor {
+    border-left-width: 1px;
   }
 
-  .scroll-view {
-    z-index: inherit;
+  .wrap-guide {
+    background-color: fade(@syntax-wrap-guide-color, 10%);
+  }
+
+  .indent-guide {
+    color: fade(@syntax-indent-guide-color, 10%);
+  }
+
+  .vertical-scrollbar {
+    display: none;
+  }
+}
+
+.tree-view {
+  .squashed-dir {
+    color: @text-color-subtle;
   }
 }

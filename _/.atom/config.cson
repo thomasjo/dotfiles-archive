@@ -1,65 +1,92 @@
 "*":
+  "autocomplete-plus":
+    useAlternateScoring: true
   core:
+    customFileTypes:
+      "text.tex.latex": [
+        "cls"
+      ]
     disabledPackages: [
       "background-tips"
       "feedback"
       "metrics"
       "welcome"
+      "spell-check"
     ]
     projectHome: "/Users/thomasjo/Code"
     themes: [
       "one-dark-ui"
-      "one-dark-syntax"
+      "one-dark-vivid-syntax"
     ]
   editor:
     fontFamily: "Fira Mono, Menlo"
+    fontSize: 10
+    invisibles:
+      tab: "⇥"
     lineHeight: 1.6
-    showInvisibles: true
-    showIndentGuide: true
-    softWrapAtPreferredLineLength: true
     scrollPastEnd: true
-    useShadowDOM: true
+    showIndentGuide: true
+    showInvisibles: true
+    softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
-    fontSize: 13
-  autocomplete:
-    includeCompletionsFromAllBuffers: true
-  "tree-view":
-    hideIgnoredNames: true
-  welcome:
-    showOnStartup: false
-  latex:
-    outputDirectory: ".output"
-    enableShellEscape: true
-    useNotificationsLogger: true
-    alwaysOpenResultInAtom: false
-  "markdown-preview":
-    useGitHubStyle: true
   "exception-reporting":
     userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
+  "file-icons": {}
+  "language-babel": {}
+  latex:
+    buildOnSave: true
+    enableShellEscape: true
+    outputDirectory: ".output"
+  "markdown-preview":
+    useGitHubStyle: true
+  minimap:
+    displayPluginsControls: false
   "one-dark-ui":
-    layoutMode: "Spacious"
     fontSize: 11
+    layoutMode: "Spacious"
   "one-light-ui":
-    layoutMode: "Spacious"
     fontSize: 11
+    layoutMode: "Spacious"
+  "spell-check": {}
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+    squashDirectoryNames: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false
+".babel.regexp.source":
+  editor:
+    softWrapHangingIndent: 2
 ".c.source":
   editor:
     tabLength: 2
-".tex.text":
+".cpp.source":
   editor:
-    softWrap: true
-    softWrapHangingIndent: 4
     tabLength: 2
+".cuda.source":
+  editor:
+    softWrapHangingIndent: 2
+    tabLength: 2
+".gfm.source":
+  editor:
+    softWrapHangingIndent: 2
 ".git-config.source":
   editor:
     softTabs: false
     tabLength: 8
+".js.jsx.source":
+  editor:
+    softWrapHangingIndent: 2
+".python.regexp.source":
+  editor:
+    softWrapHangingIndent: 2
 ".python.source":
   editor:
-    showIndentGuide: false
-".coffee.source":
+    softWrapHangingIndent: 2
+".tex.text":
   editor:
-    preferredLineLength: 100
-".cpp.source":
-  editor:
+    softWrap: true
+    softWrapHangingIndent: 4
     tabLength: 2

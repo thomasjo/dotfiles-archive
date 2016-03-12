@@ -15,24 +15,28 @@ unsetopt correct_all
 # Exports
 # -------
 export LANG="en_US.UTF-8"
+export LC_ALL="$LANG"
 export EDITOR="atom"
 export GIT_EDITOR="atom --wait"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export PATH="/usr/local/bin:$PATH"
+export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
+
 export NODE_PATH="/usr/local/lib/node_modules"
 
 # CUDA
-CUDA_ROOT="/Developer/NVIDIA/CUDA-7.0"
+CUDA_ROOT="/usr/local/cuda"
 if [ -d $CUDA_ROOT ]; then
   export PATH="$CUDA_ROOT/bin:$PATH"
-  # export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib:$DYLD_LIBRARY_PATH"
+  export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib"
 fi
 
 # Go
@@ -54,24 +58,44 @@ if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
 ##
 # Aliases
 # -------
+
+# Homebrew
 alias burp="brew update && brew upgrade --all && brew cleanup"
+# Ref: https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
+alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
+
+# Mark (oh-my-zsh plugin)
 alias J="jump"
 alias M="mark"
 
-# Resolves .config folder nonsense...
-#  ~ https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
-alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
-
-# Prevent potential disasters...
+# Prevents potential disasters...
 if which safe-rm > /dev/null; then alias rm="safe-rm"; fi
+
+alias tree="tree -CA"
 
 
 ##
 # Bootstrappers
 # -------------
+
+# Initialize rbenv if installed.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+# Initialize pyenv if installed.
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)"
+
+  # Initialize pyenv-virtualenv if installed.
+  if pyenv commands | grep virtualenv-init > /dev/null; then
+    eval "$(pyenv virtualenv-init -)"
+  fi
+
+fi
+
+# Setup hub alias if hub is installed. (git -> hub)
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
+
+# Initialize nvm if installed
 if [ -d "$HOME/.nvm" ]; then source "$HOME/.nvm/nvm.sh"; fi
 
 

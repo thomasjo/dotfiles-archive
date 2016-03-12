@@ -1,30 +1,52 @@
 [user]
 	name = Thomas Johansen
 	email = thomasjo@gmail.com
-[push]
-	default = simple
-[core]
-	autocrlf = input
-	pager = less -r
-[color]
-	ui = true
-[advice]
-	statusHints = false
 [credential]
 	helper = osxkeychain
-[diff]
-	tool = bcomp
-[difftool]
-	prompt = false
-[difftool "bcomp"]
-	trustExitCode = true
-	cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE"
-[merge]
-	tool = bcomp
-[mergetool]
-	prompt = false
-[mergetool "bcomp"]
-	trustExitCode = true
-	cmd = "/usr/local/bin/bcomp" "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+
+[core]
+	autocrlf = input
+	pager = diff-highlight | diff-so-fancy | less -r
+
+[color]
+	ui = always
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = green bold
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[advice]
+	statusHints = false
+[help]
+	autocorrect = 1
+
+[push]
+	default = current
+
 [hub]
 	protocol = https
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+
+# [pager]
+# 	diff = diff-so-fancy | less --tabs=4 -RFX
+# 	show = diff-so-fancy | less --tabs=4 -RFX
