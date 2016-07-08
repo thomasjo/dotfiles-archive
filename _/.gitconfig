@@ -6,7 +6,7 @@
 
 [core]
 	autocrlf = input
-	pager = diff-highlight | diff-so-fancy | less -r
+	# pager = diff-highlight | diff-so-fancy | less -r
 
 [color]
 	ui = always

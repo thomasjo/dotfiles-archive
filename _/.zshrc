@@ -6,7 +6,7 @@ ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(jump gitfast colored-man brew)
+plugins=(jump gitfast colored-man brew docker)
 source "$ZSH/oh-my-zsh.sh"
 unsetopt correct_all
 
@@ -21,7 +21,9 @@ export GIT_EDITOR="atom --wait"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-export PATH="/usr/local/bin:$PATH"
+export BYOBU_PREFIX=$(brew --prefix)
+
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -30,6 +32,7 @@ export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 
+# Node
 export NODE_PATH="/usr/local/lib/node_modules"
 
 # CUDA
@@ -40,13 +43,25 @@ if [ -d $CUDA_ROOT ]; then
 fi
 
 # Go
-GOPATH="$HOME/Code/go"
+GOPATH="$HOME/.go"
 if [ -d $GOPATH ]; then
   export GOPATH
   export PATH="$GOPATH/bin:$PATH"
 fi
 
+GOROOT="/usr/local/opt/go/libexec"
+if [ -d $GOROOT ]; then
+  export GOROOT
+  export PATH="$GOROOT/bin:$PATH"
+fi
+
+# Mono
+export MONO_GAC_PREFIX="/usr/local"
+
 # Atom
+ATOM_REPOS_HOME="$HOME/Code/atom"
+if [ -d $ATOM_REPOS_HOME ]; then export ATOM_REPOS_HOME; fi
+
 ATOM_DEV_RESOURCE_PATH="$HOME/Code/atom/atom"
 if [ -d $ATOM_DEV_RESOURCE_PATH ]; then export ATOM_DEV_RESOURCE_PATH; fi
 
@@ -61,7 +76,8 @@ if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
 
 # Homebrew
 alias burp="brew update && brew upgrade --all && brew cleanup"
-# Ref: https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
+
+# https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
 alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
 
 # Mark (oh-my-zsh plugin)
@@ -79,11 +95,11 @@ alias tree="tree -CA"
 # -------------
 
 # Initialize rbenv if installed.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
 # Initialize pyenv if installed.
 if which pyenv > /dev/null; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - --no-rehash)"
 
   # Initialize pyenv-virtualenv if installed.
   if pyenv commands | grep virtualenv-init > /dev/null; then
