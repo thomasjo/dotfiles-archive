@@ -15,15 +15,15 @@
       "feedback"
       "metrics"
       "welcome"
-      "spell-check"
     ]
     projectHome: "/Users/thomasjo/Code"
+    telemetryConsent: "limited"
     themes: [
-      "one-light-ui"
-      "one-light-syntax"
+      "one-dark-ui"
+      "one-dark-vivid-syntax"
     ]
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "SFMono-Regular"
     fontSize: 11
     invisibles:
       tab: "⇥"
@@ -36,6 +36,7 @@
   latex:
     enableShellEscape: true
     engine: "xelatex"
+    loggingLevel: "error"
     outputDirectory: ".output"
   "markdown-preview":
     useGitHubStyle: true
@@ -87,6 +88,12 @@
 ".js.source":
   editor:
     preferredLineLength: 100
+    softWrapHangingIndent: 2
+".python.regexp.source":
+  editor:
+    softWrapHangingIndent: 2
+".python.source":
+  editor:
     softWrapHangingIndent: 2
 ".tex.text":
   editor:

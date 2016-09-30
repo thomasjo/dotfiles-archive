@@ -21,8 +21,6 @@ export GIT_EDITOR="atom --wait"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-export BYOBU_PREFIX=$(brew --prefix)
-
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
@@ -40,6 +38,9 @@ CUDA_ROOT="/usr/local/cuda"
 if [ -d $CUDA_ROOT ]; then
   export PATH="$CUDA_ROOT/bin:$PATH"
   export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib"
+
+  # DEVELOPER_DIR trick used in some of my CUDA projects...
+  export XCODE73_DIR="$HOME/Applications/Xcode.app"
 fi
 
 # Go
@@ -95,11 +96,11 @@ alias tree="tree -CA"
 # -------------
 
 # Initialize rbenv if installed.
-if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Initialize pyenv if installed.
 if which pyenv > /dev/null; then
-  eval "$(pyenv init - --no-rehash)"
+  eval "$(pyenv init -)"
 
   # Initialize pyenv-virtualenv if installed.
   if pyenv commands | grep virtualenv-init > /dev/null; then
