@@ -18,13 +18,8 @@
     ]
     projectHome: "/Users/thomasjo/Code"
     telemetryConsent: "limited"
-    themes: [
-      "one-dark-ui"
-      "one-dark-vivid-syntax"
-    ]
   editor:
-    fontFamily: "SFMono-Regular"
-    fontSize: 11
+    fontSize: 16
     invisibles:
       tab: "⇥"
     lineHeight: 1.5
@@ -41,11 +36,11 @@
   "markdown-preview":
     useGitHubStyle: true
   "one-dark-ui":
-    fontSize: 10
+    fontSize: 11
     layoutMode: "Spacious"
     tabSizing: "Even"
   "one-light-ui":
-    fontSize: 10
+    fontSize: 11
     layoutMode: "Spacious"
     tabSizing: "Even"
   "tree-view":

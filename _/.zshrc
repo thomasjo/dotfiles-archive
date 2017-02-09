@@ -6,7 +6,7 @@ ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(jump gitfast colored-man brew docker)
+plugins=(jump gitfast colored-man docker)
 source "$ZSH/oh-my-zsh.sh"
 unsetopt correct_all
 
@@ -22,39 +22,37 @@ export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-export PATH="/Library/TeX/texbin:$PATH"
+# export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
 
 # Node
-export NODE_PATH="/usr/local/lib/node_modules"
+# export NODE_PATH="/usr/local/lib/node_modules"
 
 # CUDA
 CUDA_ROOT="/usr/local/cuda"
 if [ -d $CUDA_ROOT ]; then
   export PATH="$CUDA_ROOT/bin:$PATH"
-  export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib"
-
-  # DEVELOPER_DIR trick used in some of my CUDA projects...
-  export XCODE73_DIR="$HOME/Applications/Xcode.app"
+  # export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib"
 fi
 
 # Go
-GOPATH="$HOME/.go"
-if [ -d $GOPATH ]; then
-  export GOPATH
-  export PATH="$GOPATH/bin:$PATH"
-fi
+# GOPATH="$HOME/.go"
+# if [ -d $GOPATH ]; then
+#   export GOPATH
+#   export PATH="$GOPATH/bin:$PATH"
+# fi
 
-GOROOT="/usr/local/opt/go/libexec"
-if [ -d $GOROOT ]; then
-  export GOROOT
-  export PATH="$GOROOT/bin:$PATH"
-fi
+# GOROOT="/usr/local/opt/go/libexec"
+# if [ -d $GOROOT ]; then
+#   export GOROOT
+#   export PATH="$GOROOT/bin:$PATH"
+# fi
 
 # Mono
 export MONO_GAC_PREFIX="/usr/local"
@@ -67,8 +65,8 @@ ATOM_DEV_RESOURCE_PATH="$HOME/Code/atom/atom"
 if [ -d $ATOM_DEV_RESOURCE_PATH ]; then export ATOM_DEV_RESOURCE_PATH; fi
 
 # Android SDK
-ANDROID_HOME="/usr/local/opt/android-sdk"
-if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
+# ANDROID_HOME="/usr/local/opt/android-sdk"
+# if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
 
 
 ##
@@ -76,10 +74,10 @@ if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
 # -------
 
 # Homebrew
-alias burp="brew update && brew upgrade --all && brew cleanup"
+# alias burp="brew update && brew upgrade --all && brew cleanup"
 
 # https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
-alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
+# alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
 
 # Mark (oh-my-zsh plugin)
 alias J="jump"
@@ -109,11 +107,11 @@ if which pyenv > /dev/null; then
 
 fi
 
+# Initialize nodenv if installed.
+if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+
 # Setup hub alias if hub is installed. (git -> hub)
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
-
-# Initialize nvm if installed
-if [ -d "$HOME/.nvm" ]; then source "$HOME/.nvm/nvm.sh"; fi
 
 
 ##
