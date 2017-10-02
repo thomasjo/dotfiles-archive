@@ -15,14 +15,24 @@
       "feedback"
       "metrics"
       "welcome"
+      "github"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      ".ipy*"
     ]
     projectHome: "/Users/thomasjo/Code"
     telemetryConsent: "limited"
   editor:
-    fontSize: 16
     invisibles:
       tab: "⇥"
-    lineHeight: 1.5
+    lineHeight: 1.4
     scrollPastEnd: false
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
@@ -37,15 +47,13 @@
     useGitHubStyle: true
   "one-dark-ui":
     fontSize: 11
-    layoutMode: "Spacious"
-    tabSizing: "Even"
+    tabSizing: "Maximum"
   "one-light-ui":
     fontSize: 11
     layoutMode: "Spacious"
     tabSizing: "Even"
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
@@ -57,12 +65,10 @@
     tabLength: 2
 ".cpp.source":
   editor:
-    preferredLineLength: 120
     softWrapHangingIndent: 2
     tabLength: 2
 ".cuda.source":
   editor:
-    preferredLineLength: 120
     softWrapHangingIndent: 2
     tabLength: 2
 ".gfm.source":

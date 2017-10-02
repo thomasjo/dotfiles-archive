@@ -1,25 +1,11 @@
 @import "ui-variables";
 @import "syntax-variables";
 
-@font-size: 16px;
-@line-height: 1.5 * @font-size;
-
 .platform-darwin > atom-workspace {
   border-top: 0 !important; // Remove ugly, unnecessary top border.
 }
 
 atom-text-editor {
-  &, &::shadow {
-    font-size: @font-size;
-    line-height: @line-height;
-  }
-}
-
-atom-text-editor::shadow {
-  .line-number {
-    font-size: 8px;
-  }
-
   .line {
     &, & * {
       font-style: normal !important; // Italic text is evil.
@@ -37,10 +23,6 @@ atom-text-editor::shadow {
 
   .indent-guide {
     color: fade(@syntax-indent-guide-color, 10%);
-  }
-
-  .vertical-scrollbar {
-    display: none;
   }
 }
 
