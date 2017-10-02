@@ -19,59 +19,44 @@ export LC_ALL="$LANG"
 export EDITOR="atom"
 export GIT_EDITOR="atom --wait"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+
+export RBENV_ROOT="$HOME/.rbenv"
+export PYENV_ROOT="$HOME/.pyenv"
+export NODENV_ROOT="$HOME/.nodenv"
 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-# export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.pyenv/bin:$PATH"
-export PATH="$HOME/.nodenv/bin:$PATH"
+export PATH="$RBENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$NODENV_ROOT/bin:$PATH"
+export PATH="$HOME/.cabal/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
-
-# Node
-# export NODE_PATH="/usr/local/lib/node_modules"
 
 # CUDA
 CUDA_ROOT="/usr/local/cuda"
-if [ -d $CUDA_ROOT ]; then
+if [ -d "$CUDA_ROOT" ]; then
   export PATH="$CUDA_ROOT/bin:$PATH"
-  # export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib"
 fi
-
-# Go
-# GOPATH="$HOME/.go"
-# if [ -d $GOPATH ]; then
-#   export GOPATH
-#   export PATH="$GOPATH/bin:$PATH"
-# fi
-
-# GOROOT="/usr/local/opt/go/libexec"
-# if [ -d $GOROOT ]; then
-#   export GOROOT
-#   export PATH="$GOROOT/bin:$PATH"
-# fi
 
 # Mono
 export MONO_GAC_PREFIX="/usr/local"
 
 # Atom
 ATOM_REPOS_HOME="$HOME/Code/atom"
-if [ -d $ATOM_REPOS_HOME ]; then export ATOM_REPOS_HOME; fi
+if [ -d "$ATOM_REPOS_HOME" ]; then export ATOM_REPOS_HOME; fi
 
 ATOM_DEV_RESOURCE_PATH="$HOME/Code/atom/atom"
-if [ -d $ATOM_DEV_RESOURCE_PATH ]; then export ATOM_DEV_RESOURCE_PATH; fi
-
-# Android SDK
-# ANDROID_HOME="/usr/local/opt/android-sdk"
-# if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
+if [ -d "$ATOM_DEV_RESOURCE_PATH" ]; then export ATOM_DEV_RESOURCE_PATH; fi
 
 
 ##
 # Aliases
 # -------
+
+# OMG: Prevents potential disasters...
+if which safe-rm > /dev/null; then alias rm="safe-rm"; fi
 
 # Homebrew
 # alias burp="brew update && brew upgrade --all && brew cleanup"
@@ -83,9 +68,10 @@ if [ -d $ATOM_DEV_RESOURCE_PATH ]; then export ATOM_DEV_RESOURCE_PATH; fi
 alias J="jump"
 alias M="mark"
 
-# Prevents potential disasters...
-if which safe-rm > /dev/null; then alias rm="safe-rm"; fi
+# docker-compose
+alias dc="docker-compose"
 
+# Misc...
 alias tree="tree -CA"
 
 
@@ -94,11 +80,11 @@ alias tree="tree -CA"
 # -------------
 
 # Initialize rbenv if installed.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
 # Initialize pyenv if installed.
 if which pyenv > /dev/null; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - --no-rehash)"
 
   # Initialize pyenv-virtualenv if installed.
   if pyenv commands | grep virtualenv-init > /dev/null; then
@@ -108,15 +94,7 @@ if which pyenv > /dev/null; then
 fi
 
 # Initialize nodenv if installed.
-if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
+if which nodenv > /dev/null; then eval "$(nodenv init - --no-rehash)"; fi
 
 # Setup hub alias if hub is installed. (git -> hub)
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
-
-
-##
-# Handy stuff
-# -----------
-if which pygmentize > /dev/null; then
-  pretty() { pygmentize -f terminal "$1" | less -R }
-fi
