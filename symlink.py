@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 
 """
 Creates symlinks for everything in the _ directory, into ~/.
@@ -13,15 +13,15 @@ Options:
 
 """
 
+from __future__ import print_function
+
 import os
 import re
+
 from docopt import docopt
 
 
 def main():
-    """
-    The main function, duh!
-    """
     arguments = docopt(__doc__)
     create_symlinks(arguments["--force"])
 
@@ -56,6 +56,7 @@ def create_symlinks(force=False):
 
             print("Creating symlink {0} -> {1}".format(source, target))
             os.symlink(source, target)
+
 
 if __name__ == "__main__":
     main()
