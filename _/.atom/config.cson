@@ -29,10 +29,13 @@
     ]
     projectHome: "/Users/thomasjo/Code"
     telemetryConsent: "limited"
+    themes: [
+      "one-dark-ui"
+      "duotone-dark-space-syntax"
+    ]
   editor:
     invisibles:
       tab: "⇥"
-    lineHeight: 1.4
     scrollPastEnd: false
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
