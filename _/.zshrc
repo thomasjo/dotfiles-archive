@@ -54,6 +54,7 @@ if [ -d "$ATOM_DEV_RESOURCE_PATH" ]; then export ATOM_DEV_RESOURCE_PATH; fi
 ##
 # Aliases
 # -------
+alias ls="${aliases[ls]:-ls} --group-directories-first"
 
 # OMG: Prevents potential disasters...
 if which safe-rm > /dev/null; then alias rm="safe-rm"; fi
