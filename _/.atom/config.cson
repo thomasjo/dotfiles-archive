@@ -42,6 +42,8 @@
     softWrapHangingIndent: 2
   "exception-reporting":
     userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
+  "ide-cpp":
+    clangdPath: "/usr/bin/clangd-6.0"
   latex:
     enableShellEscape: true
     engine: "xelatex"
