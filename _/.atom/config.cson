@@ -1,7 +1,10 @@
 "*":
+  "atom-ide-ui":
+    hideNuclideWarning: true
+    use: {}
   core:
     customFileTypes:
-      "source.cpp": [
+      cpp: [
         "h"
       ]
       "source.json": [
@@ -10,29 +13,35 @@
       "text.tex.latex": [
         "cls"
       ]
+    debugLSP: true
     disabledPackages: [
       "background-tips"
       "feedback"
       "metrics"
       "welcome"
+      "github"
+      "ide-cpp"
     ]
     projectHome: "/Users/thomasjo/Code"
     telemetryConsent: "limited"
     themes: [
       "one-dark-ui"
-      "one-dark-vivid-syntax"
+      "duotone-dark-space-syntax"
     ]
+    titleBar: "custom"
+    useTreeSitterParsers: true
   editor:
     fontFamily: "SFMono-Regular"
-    fontSize: 11
+    fontSize: 12
     invisibles:
       tab: "⇥"
-    lineHeight: 1.5
     scrollPastEnd: false
     softWrapAtPreferredLineLength: true
     softWrapHangingIndent: 2
   "exception-reporting":
     userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
+  "ide-typescript":
+    javascriptSupport: false
   latex:
     enableShellEscape: true
     engine: "xelatex"
@@ -42,8 +51,7 @@
     useGitHubStyle: true
   "one-dark-ui":
     fontSize: 10
-    layoutMode: "Spacious"
-    tabSizing: "Even"
+    tabSizing: "Maximum"
   "one-light-ui":
     fontSize: 10
     layoutMode: "Spacious"
@@ -62,12 +70,10 @@
     tabLength: 2
 ".cpp.source":
   editor:
-    preferredLineLength: 120
     softWrapHangingIndent: 2
     tabLength: 2
 ".cuda.source":
   editor:
-    preferredLineLength: 120
     softWrapHangingIndent: 2
     tabLength: 2
 ".gfm.source":

@@ -6,7 +6,7 @@ ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(jump gitfast colored-man brew docker)
+plugins=(jump gitfast colored-man)
 source "$ZSH/oh-my-zsh.sh"
 unsetopt correct_all
 
@@ -26,6 +26,7 @@ export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
@@ -38,9 +39,6 @@ CUDA_ROOT="/usr/local/cuda"
 if [ -d $CUDA_ROOT ]; then
   export PATH="$CUDA_ROOT/bin:$PATH"
   export DYLD_LIBRARY_PATH="$CUDA_ROOT/lib"
-
-  # DEVELOPER_DIR trick used in some of my CUDA projects...
-  export XCODE73_DIR="$HOME/Applications/Xcode.app"
 fi
 
 # Go
@@ -76,7 +74,7 @@ if [ -d $ANDROID_HOME ]; then export ANDROID_HOME; fi
 # -------
 
 # Homebrew
-alias burp="brew update && brew upgrade --all && brew cleanup"
+alias burp="brew update && brew upgrade && brew cleanup"
 
 # https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
 alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
@@ -96,29 +94,19 @@ alias tree="tree -CA"
 # -------------
 
 # Initialize rbenv if installed.
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which rbenv > /dev/null; then eval "$(rbenv init - --no-rehash)"; fi
 
 # Initialize pyenv if installed.
 if which pyenv > /dev/null; then
-  eval "$(pyenv init -)"
+  eval "$(pyenv init - --no-rehash)"
 
   # Initialize pyenv-virtualenv if installed.
   if pyenv commands | grep virtualenv-init > /dev/null; then
     eval "$(pyenv virtualenv-init -)"
   fi
-
 fi
+
+if which nodenv > /dev/null; then eval "$(nodenv init - --no-rehash)"; fi
 
 # Setup hub alias if hub is installed. (git -> hub)
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
-
-# Initialize nvm if installed
-if [ -d "$HOME/.nvm" ]; then source "$HOME/.nvm/nvm.sh"; fi
-
-
-##
-# Handy stuff
-# -----------
-if which pygmentize > /dev/null; then
-  pretty() { pygmentize -f terminal "$1" | less -R }
-fi

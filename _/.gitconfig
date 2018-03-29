@@ -2,7 +2,7 @@
 	name = Thomas Johansen
 	email = thomasjo@gmail.com
 [credential]
-	helper = osxkeychain
+	helper = /usr/local/bin/git-credential-helper
 
 [core]
 	autocrlf = input

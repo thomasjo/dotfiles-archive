@@ -1,5 +1,2 @@
 'body':
-  'cmd-=': 'unset!'
-  'cmd--': 'unset!'
-  'cmd-0': 'unset!'
   'alt-cmd-,': 'settings-view:install-packages-and-themes'
