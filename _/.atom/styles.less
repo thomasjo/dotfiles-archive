@@ -1,10 +1,6 @@
 @import "ui-variables";
 @import "syntax-variables";
 
-.platform-darwin > atom-workspace {
-  border-top: 0 !important; // Remove ugly, unnecessary top border.
-}
-
 atom-text-editor {
   .line {
     &, & * {
@@ -18,11 +14,11 @@ atom-text-editor {
   }
 
   .wrap-guide {
-    background-color: fade(@syntax-wrap-guide-color, 33%);
+    background-color: fade(@syntax-wrap-guide-color, 5%);
   }
 
   .indent-guide {
-    color: fade(@syntax-indent-guide-color, 33%);
+    color: fade(@syntax-indent-guide-color, 5%);
   }
 }
 

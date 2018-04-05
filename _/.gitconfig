@@ -8,6 +8,12 @@
 	autocrlf = input
 	# pager = diff-highlight | diff-so-fancy | less -r
 
+[push]
+	default = current
+
+[alias]
+	root = rev-parse --show-toplevel
+
 [color]
 	ui = always
 [color "diff"]
@@ -35,9 +41,6 @@
 	statusHints = false
 [help]
 	autocorrect = 1
-
-[push]
-	default = current
 
 [hub]
 	protocol = https
