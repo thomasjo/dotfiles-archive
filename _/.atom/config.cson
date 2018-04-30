@@ -1,13 +1,29 @@
 "*":
   "atom-ide-ui":
-    use: {}
+    use:
+      "atom-ide-busy-signal": "default"
+      "atom-ide-code-actions": "default"
+      "atom-ide-code-format": "default"
+      "atom-ide-code-highlight": "default"
+      "atom-ide-console": "default"
+      "atom-ide-datatip": "default"
+      "atom-ide-debugger": "default"
+      "atom-ide-definitions": "default"
+      "atom-ide-diagnostics": "default"
+      "atom-ide-diagnostics-ui": "default"
+      "atom-ide-find-references": "default"
+      "atom-ide-global": "default"
+      "atom-ide-outline-view": "default"
+      "atom-ide-signature-help": "default"
+      "atom-ide-terminal": "default"
+      hyperclick: "default"
   core:
     autoHideMenuBar: true
     customFileTypes:
-      "source.cpp": [
+      cpp: [
         "h"
       ]
-      "source.json": [
+      json: [
         ".eslintrc"
       ]
       "text.tex.latex": [
@@ -19,7 +35,7 @@
       "metrics"
       "welcome"
       "github"
-      "language-python"
+      "spell-check"
     ]
     ignoredNames: [
       ".git"
@@ -61,6 +77,7 @@
     tabSizing: "Maximum"
   "one-light-ui":
     fontSize: 11
+    stickyHeaders: false
     tabSizing: "Even"
   "tree-view":
     hideIgnoredNames: true
@@ -83,7 +100,9 @@
     tabLength: 2
 ".gfm.source":
   editor:
-    softWrap: false
+    showInvisibles: false
+    softWrap: true
+    softWrapHangingIndent: 0
 ".git-config.source":
   editor:
     softTabs: false
