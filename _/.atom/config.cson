@@ -13,26 +13,21 @@
       "text.tex.latex": [
         "cls"
       ]
-    debugLSP: true
     disabledPackages: [
       "background-tips"
       "feedback"
       "metrics"
       "welcome"
-      "github"
-      "ide-cpp"
     ]
     projectHome: "/Users/thomasjo/Code"
     telemetryConsent: "limited"
     themes: [
-      "one-dark-ui"
-      "duotone-dark-space-syntax"
+      "one-light-ui"
+      "one-light-syntax"
     ]
-    titleBar: "custom"
-    useTreeSitterParsers: true
   editor:
     fontFamily: "SFMono-Regular"
-    fontSize: 12
+    fontSize: 11
     invisibles:
       tab: "⇥"
     scrollPastEnd: false
@@ -40,6 +35,8 @@
     softWrapHangingIndent: 2
   "exception-reporting":
     userId: "31389ec7-b10c-86d6-a4a9-1bb6d981c30d"
+  "ide-cpp":
+    clangdPath: "/usr/local/opt/llvm/bin/clangd"
   "ide-typescript":
     javascriptSupport: false
   latex:
@@ -54,11 +51,9 @@
     tabSizing: "Maximum"
   "one-light-ui":
     fontSize: 10
-    layoutMode: "Spacious"
     tabSizing: "Even"
   "tree-view":
     hideIgnoredNames: true
-    hideVcsIgnoredFiles: true
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
@@ -68,6 +63,9 @@
   editor:
     softWrapHangingIndent: 2
     tabLength: 2
+".coffee.source":
+  editor:
+    preferredLineLength: 100
 ".cpp.source":
   editor:
     softWrapHangingIndent: 2
@@ -95,6 +93,9 @@
   editor:
     preferredLineLength: 100
     softWrapHangingIndent: 2
+".litcoffee.source":
+  editor:
+    preferredLineLength: 100
 ".python.regexp.source":
   editor:
     softWrapHangingIndent: 2
