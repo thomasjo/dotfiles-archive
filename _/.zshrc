@@ -24,12 +24,14 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="/Library/TeX/texbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH="$HOME/.nodenv/bin:$PATH"
 export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/opt/go/libexec/bin:$PATH"
 export PATH="$HOME/.cabal/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Node
 export NODE_PATH="/usr/local/lib/node_modules"
