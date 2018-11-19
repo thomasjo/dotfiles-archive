@@ -97,5 +97,8 @@ fi
 # Initialize nodenv if installed.
 if which nodenv > /dev/null; then eval "$(nodenv init - --no-rehash)"; fi
 
+# Initialize direnv if installed.
+if which direnv > /dev/null; then eval "$(direnv hook zsh)"; fi
+
 # Setup hub alias if hub is installed. (git -> hub)
 if which hub > /dev/null; then eval "$(hub alias -s)"; fi
