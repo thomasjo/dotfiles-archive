@@ -19,7 +19,7 @@ export LC_ALL="$LANG"
 export EDITOR="atom"
 export GIT_EDITOR="atom --wait"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 export RBENV_ROOT="$HOME/.rbenv"
 export PYENV_ROOT="$HOME/.pyenv"
