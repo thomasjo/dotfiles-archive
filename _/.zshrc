@@ -6,7 +6,7 @@ ZSH_THEME="robbyrussell"
 CASE_SENSITIVE="true"
 DISABLE_AUTO_TITLE="true"
 
-plugins=(jump gitfast colored-man docker)
+plugins=(jump gitfast colored-man docker kubectl minikube)
 source "$ZSH/oh-my-zsh.sh"
 unsetopt correct_all
 
