@@ -27,3 +27,16 @@ atom-text-editor {
     color: @text-color-subtle;
   }
 }
+
+.platform-linux > atom-workspace {
+  &.theme-one-light-ui, &.theme-one-dark-ui {
+    // HACK: Non-integer pixel values look terrible on "normal" DPI screens.
+    .tab-bar .tab .close-icon {
+      line-height: 16px;
+      height: 16px;
+      width: 16px;
+      top: 6px;
+      right: 6px;
+    }
+  }
+}
