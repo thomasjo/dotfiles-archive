@@ -1,21 +1,31 @@
 [user]
 	name = Thomas Johansen
 	email = thomasjo@gmail.com
+
 [credential]
-	helper = /usr/local/bin/git-credential-helper
+	helper = /usr/libexec/git-core/git-credential-libsecret
 
 [core]
 	autocrlf = input
-	# pager = diff-highlight | diff-so-fancy | less -r
 
 [push]
 	default = current
+
+[init]
+	defaultBranch = main
+
+[advice]
+	statusHints = false
+
+[help]
+	autocorrect = 1
 
 [alias]
 	root = rev-parse --show-toplevel
 
 [color]
 	ui = always
+
 [color "diff"]
 	meta = yellow bold
 	commit = green bold
@@ -23,24 +33,22 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+
 [color "diff-highlight"]
 	oldNormal = red bold
 	oldHighlight = "red bold 52"
 	newNormal = green bold
 	newHighlight = "green bold 22"
+
 [color "branch"]
 	current = yellow reverse
 	local = yellow
 	remote = green
+
 [color "status"]
 	added = yellow
 	changed = green
 	untracked = cyan
-
-[advice]
-	statusHints = false
-[help]
-	autocorrect = 1
 
 [hub]
 	protocol = https
@@ -49,7 +57,3 @@
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-
-# [pager]
-#	diff = diff-so-fancy | less --tabs=4 -RFX
-#	show = diff-so-fancy | less --tabs=4 -RFX
