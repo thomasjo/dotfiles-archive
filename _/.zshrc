@@ -30,9 +30,13 @@ export PATH="$HOME/.bin:$PATH"
 export PATH="$RBENV_ROOT/bin:$PATH"
 export PATH="$PYENV_ROOT/bin:$PATH"
 export PATH="$NODENV_ROOT/bin:$PATH"
-export PATH="$HOME/.cabal/bin:$PATH"
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="/usr/local/opt/go/libexec/bin:$PATH"
+
+# Go
+GOPATH="$HOME/.local/go"
+if [ -d $GOPATH ]; then
+  export GOPATH
+  export PATH="$GOPATH/bin:$PATH"
+fi
 
 # CUDA
 CUDA_ROOT="/usr/local/cuda"
