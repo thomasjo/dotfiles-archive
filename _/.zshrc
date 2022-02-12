@@ -65,10 +65,10 @@ alias ls="${aliases[ls]:-ls} -Gh --color --group-directories-first"
 if which safe-rm > /dev/null; then alias rm="safe-rm"; fi
 
 # Homebrew
-# alias burp="brew update && brew upgrade --all && brew cleanup"
+alias burp="brew update && brew upgrade --ignore-pinned"
 
 # https://github.com/yyuu/pyenv/issues/106#issuecomment-94921352
-# alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
+alias brewdoc="env PATH=${PATH/$(pyenv root)\/shims:/} brew doctor"
 
 # Mark (oh-my-zsh plugin)
 alias J="jump"
