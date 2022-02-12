@@ -16,8 +16,8 @@ unsetopt correct_all
 # -------
 export LANG="en_US.UTF-8"
 export LC_ALL="$LANG"
-export EDITOR="atom"
-export GIT_EDITOR="atom --wait"
+export EDITOR="code --wait"
+export GIT_EDITOR="code --wait"
 export PYTHONDONTWRITEBYTECODE="ERMAHGERD"
 # export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
