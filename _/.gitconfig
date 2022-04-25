@@ -7,6 +7,7 @@
 
 [core]
 	autocrlf = input
+	pager = less -x1,5
 
 [push]
 	default = current
@@ -36,9 +37,9 @@
 
 [color "diff-highlight"]
 	oldNormal = red bold
-	oldHighlight = "red bold 52"
+	oldHighlight = red bold 52
 	newNormal = green bold
-	newHighlight = "green bold 22"
+	newHighlight = green bold 22
 
 [color "branch"]
 	current = yellow reverse
@@ -57,3 +58,6 @@
 	required = true
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
+
+[include]
+  path = ~/.gitconfig.overrides
